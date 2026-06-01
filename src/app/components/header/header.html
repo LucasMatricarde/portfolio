@@ -23,7 +23,7 @@
       class="header__hamburger"
       [class.header__hamburger--open]="menuOpen()"
       (click)="toggleMenu()"
-      aria-label="Abrir menu"
+      [attr.aria-label]="menuOpen() ? 'Fechar menu' : 'Abrir menu'"
       [attr.aria-expanded]="menuOpen()"
     >
       <span></span>

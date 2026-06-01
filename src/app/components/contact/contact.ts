@@ -27,6 +27,7 @@ export class ContactComponent {
   get messageInvalid() { return this.form.get('message')!.invalid && this.form.get('message')!.touched; }
 
   submit() {
+    if (this.formState() === 'loading') return;
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
