@@ -63,26 +63,33 @@
               <div class="contact__field" [class.contact__field--error]="nameInvalid">
                 <label for="name">Nome</label>
                 <input id="name" type="text" formControlName="name" placeholder="Seu nome" autocomplete="name"/>
-                @if (nameInvalid) { <span class="contact__error-msg" role="alert">Nome obrigatório (mínimo 2 caracteres)</span> }
+                <div aria-live="assertive" aria-atomic="true">
+                  @if (nameInvalid) { <span class="contact__error-msg">Nome obrigatório (mínimo 2 caracteres)</span> }
+                </div>
               </div>
 
               <div class="contact__field" [class.contact__field--error]="emailInvalid">
                 <label for="email">E-mail</label>
                 <input id="email" type="email" formControlName="email" placeholder="seu@email.com" autocomplete="email"/>
-                @if (emailInvalid) { <span class="contact__error-msg" role="alert">E-mail inválido</span> }
+                <div aria-live="assertive" aria-atomic="true">
+                  @if (emailInvalid) { <span class="contact__error-msg">E-mail inválido</span> }
+                </div>
               </div>
 
               <div class="contact__field" [class.contact__field--error]="messageInvalid">
                 <label for="message">Mensagem</label>
                 <textarea id="message" formControlName="message" rows="5"
                   placeholder="Olá Lucas, gostaria de conversar sobre..."></textarea>
-                @if (messageInvalid) { <span class="contact__error-msg" role="alert">Mensagem obrigatória (mínimo 10 caracteres)</span> }
+                <div aria-live="assertive" aria-atomic="true">
+                  @if (messageInvalid) { <span class="contact__error-msg">Mensagem obrigatória (mínimo 10 caracteres)</span> }
+                </div>
               </div>
 
               <button
                 type="submit"
                 class="btn btn--primary contact__submit"
                 [attr.aria-disabled]="formState() === 'loading' ? 'true' : null"
+                [attr.aria-busy]="formState() === 'loading' ? 'true' : null"
               >
                 @if (formState() === 'loading') {
                   <span class="spinner" aria-hidden="true"></span>

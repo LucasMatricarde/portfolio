@@ -116,7 +116,7 @@
     padding: 13px;
 
     &:disabled,
-    &[aria-disabled="true"] { opacity: 0.7; cursor: not-allowed; transform: none !important; }
+    &[aria-disabled="true"] { opacity: 0.7; cursor: not-allowed; pointer-events: none; transform: none !important; }
   }
 
   // ── States ─────────────────────────────────────────────────────────────────

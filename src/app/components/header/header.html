@@ -10,6 +10,7 @@
         <button
           class="header__nav-link"
           [class.header__nav-link--active]="activeSection() === link.href.slice(1)"
+          [attr.aria-current]="activeSection() === link.href.slice(1) ? 'page' : null"
           (click)="scrollTo(link.href)"
         >{{ link.label }}</button>
       }
@@ -25,6 +26,7 @@
       (click)="toggleMenu()"
       [attr.aria-label]="menuOpen() ? 'Fechar menu' : 'Abrir menu'"
       [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-nav"
     >
       <span></span>
       <span></span>
@@ -34,7 +36,7 @@
 
   <!-- Mobile menu -->
   @if (menuOpen()) {
-    <nav class="header__mobile-menu" aria-label="Menu mobile">
+    <nav id="mobile-nav" class="header__mobile-menu" aria-label="Menu mobile">
       @for (link of links; track link.href) {
         <button
           class="header__mobile-link"
