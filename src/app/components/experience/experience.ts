@@ -1,7 +1,7 @@
 import { Component, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Experience } from '../../shared/models/portfolio.models';
+import { Experience } from '@shared/models/portfolio.models';
 
 gsap.registerPlugin(ScrollTrigger);
 

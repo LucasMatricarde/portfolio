@@ -1,5 +1,5 @@
 import { Component, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
-import { TiltDirective } from '../../shared/directives/tilt.directive';
+import { TiltDirective } from '@shared/directives/tilt.directive';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

@@ -1,7 +1,7 @@
 import { Component, signal, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ContactService } from '../../core/services/contact.service';
-import { FormState } from '../../shared/models/portfolio.models';
+import { ContactService } from '@core/services/contact.service';
+import { FormState } from '@shared/models/portfolio.models';
 
 @Component({
   selector: 'app-contact',

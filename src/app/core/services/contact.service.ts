@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
-import { ContactForm } from '../../shared/models/portfolio.models';
+import { environment } from '@environments/environment';
+import { ContactForm } from '@shared/models/portfolio.models';
 
 @Injectable({ providedIn: 'root' })
 export class ContactService {

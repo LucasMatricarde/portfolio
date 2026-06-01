@@ -1,5 +1,5 @@
 import { Component, ElementRef, AfterViewInit, OnDestroy, inject } from '@angular/core';
-import { CounterDirective } from '../../shared/directives/counter.directive';
+import { CounterDirective } from '@shared/directives/counter.directive';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
