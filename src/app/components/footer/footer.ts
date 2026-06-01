@@ -10,8 +10,8 @@ import { Component } from '@angular/core';
           Desenvolvido por <strong>Lucas Matricarde</strong> — Java, Angular e boas ideias.
         </p>
         <div class="footer__links">
-          <a href="#" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/LucasMatricarde" aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/lucas-matricarde-618a99127/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </footer>

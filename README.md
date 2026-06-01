@@ -12,7 +12,7 @@ A professional portfolio built with Angular 21, Three.js, and GSAP — warm ston
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-**[🔗 Live Demo](#)** <!-- replace with your deployed URL -->
+**[🔗 Live Demo](https://lucasmatricarde.github.io/portfolio/)**
 
 <!-- Add a screenshot or GIF after deploying: -->
 <!-- ![Portfolio Preview](./docs/preview.png) -->
