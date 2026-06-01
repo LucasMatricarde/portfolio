@@ -1,0 +1,17 @@
+<section id="destaques" class="section highlights">
+  <div class="section-inner">
+    <p class="section-label highlights__label">Destaques profissionais</p>
+    <h2 class="section-title highlights__title">Números que contam<br>a história do trabalho</h2>
+
+    <div class="highlights__grid">
+      @for (h of highlights; track h.label) {
+        <div class="highlights__card">
+          <div class="highlights__number">
+            <span [appCounter]="h.value" [counterSuffix]="h.suffix">{{ h.value }}{{ h.suffix }}</span>
+          </div>
+          <p class="highlights__label-text">{{ h.label }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

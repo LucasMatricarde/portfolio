@@ -1,0 +1,38 @@
+@use 'variables' as *;
+
+.footer {
+  background: var(--color-bg-dark);
+  padding: var(--space-6) var(--space-7);
+
+  @include mobile { padding: var(--space-5); }
+
+  &__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    font-size: var(--text-sm);
+    color: rgba(255,255,255,0.4);
+
+    strong { color: rgba(255,255,255,0.6); font-weight: 600; }
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--space-5);
+
+    a {
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.3);
+      transition: color var(--transition-fast);
+
+      &:hover { color: var(--color-primary-light); }
+    }
+  }
+}

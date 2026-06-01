@@ -1,0 +1,25 @@
+<section id="experiencia" class="section experience">
+  <div class="section-inner">
+    <p class="section-label">Experiência profissional</p>
+    <h2 class="section-title">Trajetória</h2>
+
+    <div class="experience__timeline" aria-label="Linha do tempo profissional">
+      @for (exp of experiences; track exp.company) {
+        <article class="experience__item" [class.experience__item--current]="exp.isCurrent">
+          <div class="experience__dot" [class.experience__dot--current]="exp.isCurrent" aria-hidden="true"></div>
+          <div class="experience__content">
+            <time class="experience__period">{{ exp.period }}</time>
+            <h3 class="experience__company">{{ exp.company }}</h3>
+            <p class="experience__role">{{ exp.role }}</p>
+            <p class="experience__desc">{{ exp.description }}</p>
+            <div class="experience__tags">
+              @for (tag of exp.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,114 @@
+@use 'variables' as *;
+
+.education {
+  background: var(--color-bg-alt);
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-7);
+
+    @include mobile { grid-template-columns: 1fr; }
+  }
+
+  &__group-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-5);
+  }
+
+  &__degrees-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  &__degree-card {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    transition: box-shadow var(--transition-base);
+
+    &:hover { box-shadow: var(--shadow-md); }
+
+    &--inprogress { border-color: rgba(var(--color-accent-rgb), 0.3); }
+  }
+
+  &__degree-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(var(--color-primary-rgb), 0.08);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__degree-title {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 3px;
+    line-height: 1.4;
+  }
+
+  &__degree-inst {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+  }
+
+  // ── Certifications ─────────────────────────────────────────────────────────
+  &__cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  &__cert-item {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+
+    &:hover { background: var(--color-bg); }
+  }
+
+  &__cert-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(var(--color-primary-rgb), 0.1);
+    color: var(--color-primary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__cert-title {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 2px;
+  }
+
+  &__cert-inst {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+}

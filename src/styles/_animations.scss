@@ -1,0 +1,119 @@
+@use 'variables' as *;
+
+// ─── Fade-in variants (GSAP baseline fallback) ───────────────────────────────
+.gsap-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  will-change: opacity, transform;
+
+  @include reduced-motion {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// ─── Button base ─────────────────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  padding: 11px 22px;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+
+  &:hover  { transform: translateY(-1px); }
+  &:active { transform: translateY(0); }
+
+  &--primary {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 2px 8px rgba(var(--color-primary-rgb), 0.3);
+
+    &:hover { background: #1a5069; box-shadow: 0 4px 16px rgba(var(--color-primary-rgb), 0.35); }
+  }
+
+  &--outlined {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+
+    &:hover { background: rgba(var(--color-primary-rgb), 0.06); }
+  }
+
+  &--accent {
+    background: var(--color-accent);
+    color: white;
+    box-shadow: 0 2px 8px rgba(var(--color-accent-rgb), 0.3);
+
+    &:hover { background: #b5872f; }
+  }
+}
+
+// ─── Badge / tag ─────────────────────────────────────────────────────────────
+.tag {
+  display: inline-block;
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+}
+
+.badge-accent {
+  background: rgba(var(--color-accent-rgb), 0.12);
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: var(--radius-sm);
+}
+
+// ─── Tilt card base ──────────────────────────────────────────────────────────
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  will-change: transform;
+
+  @include reduced-motion {
+    transition: box-shadow var(--transition-base);
+  }
+}
+
+// ─── Section wrapper ─────────────────────────────────────────────────────────
+.section {
+  padding: var(--space-10) var(--space-7);
+
+  @include mobile {
+    padding: var(--space-8) var(--space-5);
+  }
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+// ─── Spinner ─────────────────────────────────────────────────────────────────
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+
+  @include reduced-motion {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

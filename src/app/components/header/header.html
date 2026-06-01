@@ -1,0 +1,49 @@
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="header__inner">
+    <button class="header__logo" (click)="scrollTo('#hero')" aria-label="Voltar ao início">
+      Lucas <span>Matricarde</span>
+    </button>
+
+    <!-- Desktop nav -->
+    <nav class="header__nav" aria-label="Navegação principal">
+      @for (link of links; track link.href) {
+        <button
+          class="header__nav-link"
+          [class.header__nav-link--active]="activeSection() === link.href.slice(1)"
+          (click)="scrollTo(link.href)"
+        >{{ link.label }}</button>
+      }
+      <button class="btn btn--primary header__cta" (click)="scrollTo('#contato')">
+        Entrar em contato
+      </button>
+    </nav>
+
+    <!-- Hamburger -->
+    <button
+      class="header__hamburger"
+      [class.header__hamburger--open]="menuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Abrir menu"
+      [attr.aria-expanded]="menuOpen()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  @if (menuOpen()) {
+    <nav class="header__mobile-menu" aria-label="Menu mobile">
+      @for (link of links; track link.href) {
+        <button
+          class="header__mobile-link"
+          (click)="scrollTo(link.href)"
+        >{{ link.label }}</button>
+      }
+      <button class="btn btn--primary header__mobile-cta" (click)="scrollTo('#contato')">
+        Entrar em contato
+      </button>
+    </nav>
+  }
+</header>

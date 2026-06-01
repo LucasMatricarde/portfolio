@@ -1,0 +1,43 @@
+<section id="formacao" class="section education">
+  <div class="section-inner">
+    <p class="section-label">Formação & Certificações</p>
+    <h2 class="section-title">Aprendizado contínuo</h2>
+
+    <div class="education__layout">
+      <!-- Academic degrees -->
+      <div class="education__degrees">
+        <h3 class="education__group-title">Formação acadêmica</h3>
+        <div class="education__degrees-grid">
+          @for (deg of degrees; track deg.title) {
+            <div class="education__degree-card" [class.education__degree-card--inprogress]="deg.status === 'in-progress'">
+              <div class="education__degree-icon" aria-hidden="true">🎓</div>
+              <div>
+                <p class="education__degree-title">{{ deg.title }}</p>
+                <p class="education__degree-inst">{{ deg.institution }}</p>
+                @if (deg.status === 'in-progress') {
+                  <span class="badge-accent">Em andamento</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="education__certs">
+        <h3 class="education__group-title">Certificações</h3>
+        <ul class="education__cert-list">
+          @for (cert of certifications; track cert.title) {
+            <li class="education__cert-item">
+              <span class="education__cert-icon" aria-hidden="true">✓</span>
+              <div>
+                <p class="education__cert-title">{{ cert.title }}</p>
+                <p class="education__cert-inst">{{ cert.institution }}</p>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

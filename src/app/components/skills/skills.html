@@ -1,0 +1,36 @@
+<section id="tecnologias" class="section skills">
+  <div class="section-inner">
+    <div class="skills__header">
+      <div>
+        <p class="section-label">Tecnologias</p>
+        <h2 class="section-title">Stack completo</h2>
+        <p class="section-desc">Ferramentas e tecnologias que uso no dia a dia em sistemas corporativos, APIs, banco de dados e cloud.</p>
+      </div>
+      <!-- Mini hex decoration -->
+      <div class="skills__hex-deco" aria-hidden="true">
+        <svg viewBox="0 0 90 100" width="90" height="100">
+          <polygon points="45,5 80,25 80,65 45,85 10,65 10,25" fill="none" stroke="var(--color-primary)" stroke-width="1.5" opacity="0.15"/>
+          <polygon points="45,20 70,34 70,62 45,76 20,62 20,34" fill="rgba(30,92,122,0.05)" stroke="var(--color-primary)" stroke-width="1.2" opacity="0.3"/>
+          <circle cx="45" cy="50" r="6" fill="var(--color-primary)" opacity="0.2"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="skills__grid">
+      @for (cat of categories; track cat.name) {
+        <div class="skills__category">
+          <h3 class="skills__cat-name">{{ cat.name }}</h3>
+          <div class="skills__badges">
+            @for (skill of cat.skills; track skill) {
+              <span
+                class="skills__badge"
+                (mouseenter)="onBadgeEnter($event)"
+                (mouseleave)="onBadgeLeave($event)"
+              >{{ skill }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<section id="hero" class="hero" aria-label="Apresentação">
+  <div class="hero__bg" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__tag">
+        <span>Curitiba / PR</span>
+        <span class="hero__tag-sep" aria-hidden="true">·</span>
+        <span>8 anos de experiência</span>
+      </div>
+
+      <h1 class="hero__title">
+        Desenvolvedor<br>
+        Java Full Stack<br>
+        <span class="hero__title-accent">Sênior</span>
+      </h1>
+
+      <p class="hero__sub">
+        Construo sistemas corporativos robustos, APIs bem estruturadas e soluções escaláveis
+        com Java, Spring Boot, Angular, Oracle e arquitetura limpa.
+      </p>
+
+      <blockquote class="hero__quote">
+        "Gosto de transformar sistemas complexos em soluções claras, sustentáveis e úteis para o negócio."
+      </blockquote>
+
+      <div class="hero__actions">
+        <button class="btn btn--primary" (click)="scrollTo('projetos')">
+          Ver projetos
+        </button>
+        <button class="btn btn--outlined" (click)="scrollTo('contato')">
+          Fale comigo
+        </button>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <app-hex-scene />
+    </div>
+  </div>
+</section>

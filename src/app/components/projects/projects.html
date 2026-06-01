@@ -1,0 +1,71 @@
+<section id="projetos" class="section projects">
+  <div class="section-inner">
+    <p class="section-label">Projetos</p>
+    <h2 class="section-title">Sistemas que constroem valor</h2>
+    <p class="section-desc">Projetos corporativos com foco em arquitetura sólida, integrações reais e sustentabilidade do código ao longo do tempo.</p>
+
+    <div class="projects__grid">
+      @for (p of projects; track p.title) {
+        <article
+          class="project-card"
+          (mouseenter)="onCardEnter($event)"
+          (mouseleave)="onCardLeave($event)"
+        >
+          <!-- Abstract visual preview -->
+          <div class="project-card__preview" [attr.data-project]="p.svgId">
+            @if (p.svgId === 'erp') {
+              <svg viewBox="0 0 280 160" aria-hidden="true" class="project-card__svg">
+                <polygon points="140,20 180,42 180,86 140,108 100,86 100,42" fill="rgba(30,92,122,0.08)" stroke="#1e5c7a" stroke-width="1.5"/>
+                <polygon points="140,40 170,57 170,91 140,108 110,91 110,57" fill="rgba(30,92,122,0.05)" stroke="#4a9ab8" stroke-width="1" opacity="0.7"/>
+                <circle cx="140" cy="74" r="6" fill="#1e5c7a" opacity="0.5"/>
+                <line x1="60" y1="74" x2="100" y2="74" stroke="#c8973a" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+                <line x1="180" y1="74" x2="220" y2="74" stroke="#c8973a" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+                <circle cx="55" cy="74" r="5" fill="#c8973a" opacity="0.7"/>
+                <circle cx="225" cy="74" r="5" fill="#c8973a" opacity="0.7"/>
+                <rect x="30" y="58" width="26" height="32" rx="4" fill="rgba(200,151,58,0.12)" stroke="#c8973a" stroke-width="1" opacity="0.6"/>
+                <rect x="224" y="58" width="26" height="32" rx="4" fill="rgba(200,151,58,0.12)" stroke="#c8973a" stroke-width="1" opacity="0.6"/>
+                <text x="43" y="78" text-anchor="middle" fill="#c8973a" font-size="6" opacity="0.7" font-family="system-ui">ERP</text>
+                <text x="237" y="78" text-anchor="middle" fill="#c8973a" font-size="6" opacity="0.7" font-family="system-ui">API</text>
+              </svg>
+            } @else {
+              <svg viewBox="0 0 280 160" aria-hidden="true" class="project-card__svg">
+                <rect x="50" y="30" width="60" height="40" rx="6" fill="rgba(30,92,122,0.08)" stroke="#1e5c7a" stroke-width="1.5"/>
+                <rect x="170" y="30" width="60" height="40" rx="6" fill="rgba(30,92,122,0.08)" stroke="#1e5c7a" stroke-width="1.5"/>
+                <rect x="110" y="90" width="60" height="40" rx="6" fill="rgba(74,154,184,0.1)" stroke="#4a9ab8" stroke-width="1.5"/>
+                <line x1="110" y1="50" x2="170" y2="50" stroke="#1e5c7a" stroke-width="1.2" opacity="0.5"/>
+                <line x1="80"  y1="70" x2="140" y2="90" stroke="#4a9ab8" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.6"/>
+                <line x1="200" y1="70" x2="140" y2="90" stroke="#4a9ab8" stroke-width="1.2" stroke-dasharray="3,3" opacity="0.6"/>
+                <circle cx="110" cy="50" r="3" fill="#1e5c7a" opacity="0.7"/>
+                <circle cx="170" cy="50" r="3" fill="#1e5c7a" opacity="0.7"/>
+                <circle cx="140" cy="90" r="3" fill="#4a9ab8" opacity="0.7"/>
+                <text x="80"  y="53" text-anchor="middle" fill="#1e5c7a" font-size="6.5" opacity="0.8" font-family="system-ui">Oracle</text>
+                <text x="200" y="53" text-anchor="middle" fill="#1e5c7a" font-size="6.5" opacity="0.8" font-family="system-ui">Java</text>
+                <text x="140" y="113" text-anchor="middle" fill="#4a9ab8" font-size="6.5" opacity="0.8" font-family="system-ui">REST</text>
+              </svg>
+            }
+          </div>
+
+          <div class="project-card__body">
+            <div class="project-card__header">
+              <div>
+                <h3 class="project-card__title">{{ p.title }}</h3>
+                <p class="project-card__subtitle">{{ p.subtitle }}</p>
+              </div>
+              @if (p.status === 'in-development') {
+                <span class="badge-accent">Em desenvolvimento</span>
+              } @else {
+                <span class="project-card__badge project-card__badge--corporate">Sistema corporativo</span>
+              }
+            </div>
+            <p class="project-card__desc">{{ p.description }}</p>
+            <div class="project-card__tags">
+              @for (tag of p.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

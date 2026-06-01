@@ -1,0 +1,100 @@
+<section id="contato" class="section contact">
+  <div class="section-inner">
+    <p class="section-label">Contato</p>
+    <h2 class="section-title">Vamos construir<br>algo bom?</h2>
+    <p class="section-desc contact__intro">
+      Estou aberto a conversar sobre projetos, oportunidades, sistemas corporativos,
+      arquitetura, integrações e modernização de aplicações.
+    </p>
+
+    <div class="contact__layout">
+      <!-- Info -->
+      <address class="contact__info">
+        <div class="contact__info-item">
+          <div class="contact__info-icon" aria-hidden="true">📍</div>
+          <span>Curitiba / PR</span>
+        </div>
+        <div class="contact__info-item">
+          <div class="contact__info-icon" aria-hidden="true">✉️</div>
+          <a href="mailto:lucasmatricarde@gmail.com">lucasmatricarde&#64;gmail.com</a>
+        </div>
+        <div class="contact__info-item">
+          <div class="contact__info-icon" aria-hidden="true">📱</div>
+          <a href="tel:+5541995927618">(41) 99592-7618</a>
+        </div>
+        <div class="contact__info-item">
+          <div class="contact__info-icon" aria-hidden="true">💼</div>
+          <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn (em breve)</a>
+        </div>
+        <div class="contact__info-item">
+          <div class="contact__info-icon" aria-hidden="true">🐙</div>
+          <a href="#" target="_blank" rel="noopener noreferrer">GitHub (em breve)</a>
+        </div>
+
+        <!-- Small hex deco -->
+        <div class="contact__deco" aria-hidden="true">
+          <svg viewBox="0 0 100 110" width="90">
+            <polygon points="50,8 85,28 85,68 50,88 15,68 15,28" fill="none" stroke="var(--color-primary)" stroke-width="1.2" opacity="0.18"/>
+            <polygon points="50,24 75,38 75,66 50,80 25,66 25,38" fill="rgba(var(--color-primary-rgb),0.04)" stroke="var(--color-primary)" stroke-width="1" opacity="0.3"/>
+            <circle cx="50" cy="54" r="5" fill="var(--color-accent)" opacity="0.4"/>
+            <circle cx="50" cy="54" r="10" fill="none" stroke="var(--color-accent)" stroke-width="0.8" opacity="0.2"/>
+          </svg>
+        </div>
+      </address>
+
+      <!-- Form -->
+      <div class="contact__form-wrapper">
+        @switch (formState()) {
+          @case ('success') {
+            <div class="contact__success" role="status">
+              <div class="contact__success-icon" aria-hidden="true">✓</div>
+              <h3>Mensagem enviada!</h3>
+              <p>Entrarei em contato em breve. Obrigado pelo interesse.</p>
+            </div>
+          }
+          @case ('error') {
+            <div class="contact__error" role="alert">
+              <p>Ocorreu um erro ao enviar. Tente pelo e-mail ou WhatsApp diretamente.</p>
+              <button class="btn btn--outlined" (click)="retry()">Tentar novamente</button>
+            </div>
+          }
+          @default {
+            <form [formGroup]="form" (ngSubmit)="submit()" class="contact__form" novalidate>
+              <div class="contact__field" [class.contact__field--error]="nameInvalid">
+                <label for="name">Nome</label>
+                <input id="name" type="text" formControlName="name" placeholder="Seu nome" autocomplete="name"/>
+                @if (nameInvalid) { <span class="contact__error-msg">Nome obrigatório (mínimo 2 caracteres)</span> }
+              </div>
+
+              <div class="contact__field" [class.contact__field--error]="emailInvalid">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" formControlName="email" placeholder="seu@email.com" autocomplete="email"/>
+                @if (emailInvalid) { <span class="contact__error-msg">E-mail inválido</span> }
+              </div>
+
+              <div class="contact__field" [class.contact__field--error]="messageInvalid">
+                <label for="message">Mensagem</label>
+                <textarea id="message" formControlName="message" rows="5"
+                  placeholder="Olá Lucas, gostaria de conversar sobre..."></textarea>
+                @if (messageInvalid) { <span class="contact__error-msg">Mensagem obrigatória (mínimo 10 caracteres)</span> }
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn--primary contact__submit"
+                [disabled]="formState() === 'loading'"
+              >
+                @if (formState() === 'loading') {
+                  <span class="spinner" aria-hidden="true"></span>
+                  Enviando…
+                } @else {
+                  Enviar mensagem
+                }
+              </button>
+            </form>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</section>

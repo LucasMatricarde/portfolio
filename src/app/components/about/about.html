@@ -1,0 +1,25 @@
+<section id="sobre" class="section about">
+  <div class="section-inner">
+    <div class="about__text">
+      <p class="section-label">Sobre mim</p>
+      <h2 class="section-title">Desenvolvedor com foco em<br>sistemas que realmente funcionam</h2>
+      <p class="about__desc">
+        Sou desenvolvedor Java Full Stack Sênior, com forte atuação em desenvolvimento, sustentação
+        e modernização de sistemas corporativos. Tenho experiência com Java, Spring Boot, APIs REST,
+        Angular, Oracle/PLSQL, integrações externas, arquitetura hexagonal, Docker, AWS e práticas
+        DevOps. Também atuo com mentoria técnica, code reviews, troubleshooting em produção e
+        melhoria contínua de sistemas legados.
+      </p>
+    </div>
+
+    <div class="about__grid">
+      @for (card of cards; track card.title) {
+        <div class="about__card tilt-card" appTilt>
+          <div class="about__card-icon" aria-hidden="true">{{ card.icon }}</div>
+          <h3 class="about__card-title">{{ card.title }}</h3>
+          <p class="about__card-desc">{{ card.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
