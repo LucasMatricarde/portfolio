@@ -63,7 +63,7 @@
               <div class="contact__field" [class.contact__field--error]="nameInvalid">
                 <label for="name">Nome</label>
                 <input id="name" type="text" formControlName="name" placeholder="Seu nome" autocomplete="name"/>
-                <div aria-live="assertive" aria-atomic="true">
+                <div aria-live="polite" aria-atomic="true">
                   @if (nameInvalid) { <span class="contact__error-msg">Nome obrigatório (mínimo 2 caracteres)</span> }
                 </div>
               </div>
@@ -71,7 +71,7 @@
               <div class="contact__field" [class.contact__field--error]="emailInvalid">
                 <label for="email">E-mail</label>
                 <input id="email" type="email" formControlName="email" placeholder="seu@email.com" autocomplete="email"/>
-                <div aria-live="assertive" aria-atomic="true">
+                <div aria-live="polite" aria-atomic="true">
                   @if (emailInvalid) { <span class="contact__error-msg">E-mail inválido</span> }
                 </div>
               </div>
@@ -80,7 +80,7 @@
                 <label for="message">Mensagem</label>
                 <textarea id="message" formControlName="message" rows="5"
                   placeholder="Olá Lucas, gostaria de conversar sobre..."></textarea>
-                <div aria-live="assertive" aria-atomic="true">
+                <div aria-live="polite" aria-atomic="true">
                   @if (messageInvalid) { <span class="contact__error-msg">Mensagem obrigatória (mínimo 10 caracteres)</span> }
                 </div>
               </div>

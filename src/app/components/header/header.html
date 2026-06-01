@@ -10,7 +10,7 @@
         <button
           class="header__nav-link"
           [class.header__nav-link--active]="activeSection() === link.href.slice(1)"
-          [attr.aria-current]="activeSection() === link.href.slice(1) ? 'page' : null"
+          [attr.aria-current]="activeSection() === link.href.slice(1) ? 'location' : null"
           (click)="scrollTo(link.href)"
         >{{ link.label }}</button>
       }
@@ -40,7 +40,7 @@
       @for (link of links; track link.href) {
         <button
           class="header__mobile-link"
-          [attr.aria-current]="activeSection() === link.href.slice(1) ? 'page' : null"
+          [attr.aria-current]="activeSection() === link.href.slice(1) ? 'location' : null"
           (click)="scrollTo(link.href)"
         >{{ link.label }}</button>
       }
