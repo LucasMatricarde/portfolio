@@ -5,6 +5,55 @@
 
   &__intro { margin-top: var(--space-4); margin-bottom: 0; }
 
+  // ── Social cards ────────────────────────────────────────────────────────────
+  &__social {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+    flex-wrap: wrap;
+  }
+
+  &__social-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex: 1;
+    min-width: 200px;
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+
+    &:hover {
+      border-color: rgba(var(--color-primary-rgb), 0.4);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+
+      .contact__social-arrow { transform: translateX(3px); color: var(--color-primary); }
+    }
+
+    &--linkedin:hover {
+      border-color: rgba(0, 119, 181, 0.35);
+      .contact__social-icon { color: #0077b5; }
+      .contact__social-name { color: #0077b5; }
+      .contact__social-arrow { color: #0077b5; }
+    }
+  }
+
+  &__social-icon { width: 28px; height: 28px; color: var(--color-primary); flex-shrink: 0; }
+
+  &__social-info { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+
+  &__social-name { font-size: var(--text-base); font-weight: 700; color: var(--color-text); line-height: 1.2; }
+
+  &__social-handle { font-size: var(--text-xs); color: var(--color-text-muted); }
+
+  &__social-arrow {
+    width: 16px; height: 16px; color: var(--color-text-muted); flex-shrink: 0;
+    transition: transform var(--transition-fast), color var(--transition-fast);
+  }
+
   &__layout {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
