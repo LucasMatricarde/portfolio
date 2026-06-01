@@ -117,14 +117,21 @@ export class HexSceneComponent implements AfterViewInit, OnDestroy {
     this.camera.position.z = 5;
 
     // Renderer
+    const isMobile = window.innerWidth <= 768;
+    const dprCap = isMobile ? 1.5 : 2;
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
     this.renderer.setSize(w, h);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, dprCap));
     this.renderer.setClearColor(0x000000, 0);
 
     // Group holding all hex objects
     this.group = new THREE.Group();
     this.scene.add(this.group);
+
+    // Scale down on mobile/tablet to fit smaller canvas
+    if (isMobile) {
+      this.group.scale.setScalar(0.75);
+    }
 
     // Colors
     const colorPrimary = 0x1e5c7a;
